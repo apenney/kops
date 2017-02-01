@@ -246,6 +246,7 @@ func RunUpdateCluster(f *util.Factory, clusterName string, out io.Writer, c *Upd
 		// More suggestions on first run
 		if firstRun {
 			fmt.Fprintf(sb, "Suggestions:\n")
+			fmt.Fprintf(sb, " * validate cluster: kops validate cluster\n")
 			fmt.Fprintf(sb, " * list nodes: kubectl get nodes --show-labels\n")
 			if !usesBastion(instanceGroups) {
 				fmt.Fprintf(sb, " * ssh to the master: ssh -i ~/.ssh/id_rsa admin@%s\n", cluster.Spec.MasterPublicName)
